@@ -16,7 +16,7 @@ class App < Sinatra::Base
   end
 
   def title
-    'Summer Instititue Starter App'
+    'Very good app, not a virus'
   end
 
   get '/examples' do
@@ -28,4 +28,15 @@ class App < Sinatra::Base
     @flash = session.delete(:flash) || { info: 'Welcome to Summer Institute!' }
     erb(:index)
   end
+  
+  get '/projects/new' do
+      erb(:new_project)
+  end
+  
+  
+  post '/projects/new' do
+      redirect(url("/projects/new"))
+  end
 end
+
+
