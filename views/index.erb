@@ -1,5 +1,20 @@
 <h1 class="display-4 py-3 mb-3 border-bottom">
-  <%= title %>
+  <%- title %>
 </h1>
+<div class="row">
+    <ul class="list-group list-group-horizontal col-md-12 flex-wrap">
+    
 
-Hello world!
+<%- projects.each do |project| -%>
+<li class="list-group-item btn btn-outline-dark m-3 border">
+    <a href="<%= url("/projects/#{project}") %>">
+        <i class="fas fa-camera-retro fa-5x "></i>
+            <p><%= project.gsub('_',' ').capitalize %></p>
+        </a>
+    
+    </li>
+<%- end -%>
+
+
+    </ul>
+</div>
